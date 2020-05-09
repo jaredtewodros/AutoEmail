@@ -15,7 +15,7 @@ from reportlab.lib import colors
 import os
 
 #read data from csv, skip the first two rows as those names are not conventional
-data = pd.read_csv('BookPythonTest1.csv',skiprows=2)
+data = pd.read_csv('YOUR_CSV_FILE',skiprows=2)
 data = pd.DataFrame(data)
 
 
@@ -32,7 +32,7 @@ def sendReportLab():
    # c.setFillColorRGB(1, 0, 0)
    # c.rect(5, 5, 652, 792, fill=1)
     Story = []
-    logo = "xScion Logo Alt.png"
+    logo = "YOUR_LOGO"
     magName = "Pythonista"
 
     #canvas.rect(0,0,8*inch,11*inch,stroke=0,fill=1)
@@ -99,23 +99,7 @@ def sendReportLab():
         row["Question 15 Analysis"],
     ]
     x = str(row["Organization*"])
-    ourQuestions = [
-        "Data is key to " + x + " Corporate Strategic Plan?",
-        x + ' could be considered a "data-driven" company because it exhibits all three below traits: 1. Sees data as its core competency, including leverages and monetizes data to generate value for stakeholders. 2. Ensures every person who can use data to make better decisions, has access to the data they need when they need it. 3. Relentlessly measures and monitors the pulse of the business and are doing so in a continuous, often-automated manner.',
-        "Using analytics to transform " + x + " is an executive management goal.",
-        x + " has a culture of accountability and shared responsibility for managing corporate data assets.",
-        x + " has a corporate Business Glossary and standard approach for managing metadata.",
-        x + " has developed policies and standards for ensuring that the right people have access to the right data at the right time.",
-        x + " has developed Conceptual, Logical, and Physical models for its Data Architecture.",
-        x + " has a dedicated Data Architecture Group.",
-        x + " considers changes to its Data Model as part of the System Development",
-        x + " has a Data Quality Engineering Group.",
-        x + " has developed Quality Assurance processes, which are actively integrated and monitored across all business portfolios, to measure data quality and timeliness.",
-        x + " has a formal, documented Disaster Recovery plan for its data.",
-        x + " has a Big Data Operations Group.",
-        x + " processes structured and unstructured data.",
-        x + " has invested in data technologies/tools, such as Predictive Analytics, Machine Learning, and Artificial Intelligence."
-    ]
+    ourQuestions = ["LIST SURVEY QUESTIONS HERE"]
     theAnswers = [
         row["Q8"],
         row["Q9"],
@@ -159,7 +143,7 @@ def sendReportLab():
     ptext = 'Thanks,'
     Story.append(Paragraph(ptext, styles["Normal"]))
     Story.append(Spacer(1, 3))
-    ptext = 'xScion Solutions Team'
+    ptext = 'COMPANY NAME'
     Story.append(Paragraph(ptext, styles["Normal"]))
     Story.append(Spacer(1, 3))
     ptext = "<a href='mailto:admm@xscion.com'>admm@xscion.com</a>"
@@ -174,7 +158,7 @@ def sendReportLab():
 #iterrate through all rows, thus sending emails to all users
 for index, row in data.iterrows():
     style.use('dark_background')
-    im = image.imread('xScion Logo.png')
+    im = image.imread('YOUR LOGO')
 
     #Set up Labels and Data
     labels = np.array(["Program Goals", "Program Scope", "Business Case", "Ownership/Stewardship", "Metadata Management",
@@ -254,23 +238,7 @@ for index, row in data.iterrows():
         row["Question 15 Analysis"],
     ]
     x = str(row["Organization*"])
-    ourQuestions = [
-        'Data is key to ' + x + ' Corporate Strategic Plan?',
-        x + ' could be considered a "data-driven" company because it exhibits all three below traits: 1. Sees data as its core competency, including leverages and monetizes data to generate value for stakeholders. 2. Ensures every person who can use data to make better decisions, has access to the data they need when they need it. 3. Relentlessly measures and monitors the pulse of the business and are doing so in a continuous, often-automated manner.',
-        "Using analytics to transform " + x + " is an executive management goal.",
-        x + " has a culture of accountability and shared responsibility for managing corporate data assets.",
-        x + " has a corporate Business Glossary and standard approach for managing metadata.",
-        x + " has developed policies and standards for ensuring that the right people have access to the right data at the right time.",
-        x + " has developed Conceptual, Logical, and Physical models for its Data Architecture.",
-        x + " has a dedicated Data Architecture Group.",
-        x + " considers changes to its Data Model as part of the System Development",
-        x + " has a Data Quality Engineering Group.",
-        x + " has developed Quality Assurance processes, which are actively integrated and monitored across all business portfolios, to measure data quality and timeliness.",
-        x + " has a formal, documented Disaster Recovery plan for its data.",
-        x + " has a Big Data Operations Group.",
-        x + " processes structured and unstructured data.",
-        x + " has invested in data technologies/tools, such as Predictive Analytics, Machine Learning, and Artificial Intelligence."
-    ]
+    ourQuestions = ["LIST SURVEY QUESTIONS HERE"]
     theAnswers = [
         row["Q8"],
         row["Q9"],
